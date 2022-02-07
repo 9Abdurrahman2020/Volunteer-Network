@@ -1,0 +1,31 @@
+.featured-container{
+    background-image: url('https://loveicon.smartdemowp.com/wp-content/uploads/2021/06/about-style1_content-box-map.png');
+    background-repeat: no-repeat;
+    padding-top: 100px;
+    background-position-x: -50px;
+    background-position-y: -20px;
+}
+.featured-subtitle{
+    font-family: 'Dancing Script', cursive;
+    color: rgb(231, 74, 1);
+}
+.director{
+    font-family: 'Yellowtail', cursive;
+    color: rgb(2, 104, 238);
+}
+.featured-right{
+    background-color: rgb(153, 0, 255);
+    color: white;
+    padding: 40px 50px;  
+}
+
+@media only screen and (max-width: 750px) {
+    .featured-left,.achieved{
+        text-align: center;
+    }
+  }
+@media only screen and (min-width: 750px) {
+    .featured-right{
+        margin-top: -140px;
+    }
+  }

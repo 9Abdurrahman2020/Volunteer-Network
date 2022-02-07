@@ -28,8 +28,8 @@ const TopBanner = () => {
                 data-aos-delay="900"
                 >
                     <h3 className='text-white'>We,ve been tackling poverty in communities to build better lives</h3>
-                    <Button variant="danger" className="me-3" size="lg">SUPPORT US</Button> 
-                    <Button variant="dark" size="lg">HOW WE HELP</Button> 
+                    <Button variant="danger" className="me-3 mt-3" size="lg"><i class="fas fa-check-circle"></i> SUPPORT US</Button> 
+                    <Button variant="dark" className="mt-3" size="lg"><i class="fas fa-check-circle"></i> HOW WE HELP</Button> 
                 </div>
             </div>
         </div>
