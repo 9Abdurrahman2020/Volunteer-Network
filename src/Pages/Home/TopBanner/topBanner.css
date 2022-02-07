@@ -1,0 +1,22 @@
+.topBanner-container{
+    width: 100%;
+    height: 100vh;
+    background-image: url('https://kidshelpphone.ca/wp-content/uploads/Volunteer-index-homepage_Top-of-Page-Featured-Banner-w-CTA-scaled.jpg');
+    background-size: cover;
+    background-color: rgba(47, 137, 240, 0.336);
+    background-blend-mode: color-burn;
+    padding: 120px 0px;
+}
+.topBanner-subtitle{
+    font-family: 'Dancing Script', cursive;
+    color: white;
+}
+.horizontal-line{
+    background-color: rgb(255, 84, 5);
+    height: 2px !important;
+    opacity: 1;
+    width: 50%;
+}
+
+    
+   
