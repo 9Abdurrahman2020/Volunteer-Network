@@ -10,7 +10,7 @@ const OngoingProjects = () => {
                 <hr
                 data-aos="zoom-out" 
                 data-aos-duration="900" 
-                data-aos-delay="900"
+                data-aos-delay="500"
                 className='horizontal-line2' />
             </div>
             <div className="card-container">
