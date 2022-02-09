@@ -5,6 +5,7 @@ import AppealsDonations from '../AppealsDonations/AppealsDonations';
 import BecomeAVolunteer from '../BecomeAVolunteer/BecomeAVolunteer';
 import FeaturedBanner from '../FeaturedBanner/FeaturedBanner';
 import OngoingProjects from '../OngoingProjects/OngoingProjects';
+import Statics from '../Statics/Statics';
 import TopBanner from '../TopBanner/TopBanner';
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
             <OngoingProjects/>
             <BecomeAVolunteer/>
             <AppealsDonations/>
+            <Statics/>
             <Footer/>
         </div>
     );

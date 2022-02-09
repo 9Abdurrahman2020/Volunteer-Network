@@ -1,0 +1,24 @@
+.static-container{
+    background-color: rgb(217, 230, 225);
+}
+.state-card{
+    text-align: center;
+    padding: 50px 30px;
+}
+.state-card:hover{
+    transition: 1s;
+    background-color: rgb(3, 3, 3);    
+}
+.state-card:hover{
+    color: white;
+}
+.state-card h1{
+    font-weight: bold;
+}
+.state-card p{
+    font-weight: bold;
+}
+.state-card img{
+    width: 100px;
+    height: 100px;
+}
