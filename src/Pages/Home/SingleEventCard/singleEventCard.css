@@ -1,0 +1,9 @@
+.single-event-container{
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+}
+.day-container{
+    background-color: #0bd4cd;
+    text-align: center;
+    color: white;
+}

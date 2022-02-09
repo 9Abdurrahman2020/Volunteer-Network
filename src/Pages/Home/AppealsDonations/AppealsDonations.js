@@ -10,7 +10,6 @@ import SingleDonationCard from '../SingleDonationCard/SingleDonationCard';
 const AppealsDonations = () => {
   const dispatch = useDispatch();
   const donationData = useSelector( state => state.volunteerData.donationData )
-  console.log(donationData);
 
   useEffect( ()=>{
     dispatch(fetchUserDonationData())

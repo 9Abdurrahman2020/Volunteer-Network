@@ -7,6 +7,7 @@ import FeaturedBanner from '../FeaturedBanner/FeaturedBanner';
 import OngoingProjects from '../OngoingProjects/OngoingProjects';
 import Statics from '../Statics/Statics';
 import TopBanner from '../TopBanner/TopBanner';
+import UpcomingEvents from '../UpcomingEvents/UpcomingEvents';
 
 const Home = () => {
     return (
@@ -18,6 +19,7 @@ const Home = () => {
             <BecomeAVolunteer/>
             <AppealsDonations/>
             <Statics/>
+            <UpcomingEvents/>
             <Footer/>
         </div>
     );

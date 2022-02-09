@@ -8,12 +8,21 @@ export const fetchUserDonationData = createAsyncThunk(
     return response
   }
 )
+export const fetchEventData = createAsyncThunk(
+  'data/fetchEventData',
+  async () => {
+    const response = await fetch('./FakeData/eventData.json')
+    .then( res=> res.json())
+    return response
+  }
+)
 
 
 export const volunteerSlice = createSlice({
   name: 'counter',
   initialState: {
-    donationData: []
+    donationData: [],
+    eventData: []
   },
   reducers: {
 
@@ -21,6 +30,10 @@ export const volunteerSlice = createSlice({
   extraReducers: (builder)=>{
     builder.addCase(fetchUserDonationData.fulfilled,(state, action)=>{
       state.donationData = action.payload;
+
+    })
+    builder.addCase(fetchEventData.fulfilled,(state, action)=>{
+      state.eventData = action.payload;
 
     })
   }

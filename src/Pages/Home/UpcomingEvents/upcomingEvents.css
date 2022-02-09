@@ -1,0 +1,14 @@
+.upcoming-events-container{
+    margin: 100px 0px;
+    background-color: rgb(240, 240, 240);
+}
+.left-arrow, .right-arrow{
+    transform: scale(2);
+    border: 1px solid black;
+    padding: 5px;
+    background-color: aliceblue;
+    color: rgb(211, 102, 102);
+}
+.slick-arrow{
+    display: none !important;
+}
