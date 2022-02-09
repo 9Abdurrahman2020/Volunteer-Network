@@ -1,0 +1,31 @@
+.login-container{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to right, #175fd1 ,  #c800ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inner-login-container{
+    border-radius: 10px;
+    width: 70%;
+    background-color: white;
+    align-items: center;
+}
+.image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-input-container{
+    text-align: center;
+    padding: 10%;
+}
+.login-button{
+    width: 100%;
+}
+@media only screen and ( max-width:991px ){
+    .image-container{
+        display: none;
+    }
+}

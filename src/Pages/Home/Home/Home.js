@@ -1,6 +1,5 @@
 import React from 'react';
 import Footer from '../../Shared/Footer/Footer';
-import Header from '../../Shared/Header/Header';
 import AppealsDonations from '../AppealsDonations/AppealsDonations';
 import BecomeAVolunteer from '../BecomeAVolunteer/BecomeAVolunteer';
 import FeaturedBanner from '../FeaturedBanner/FeaturedBanner';
@@ -12,7 +11,6 @@ import UpcomingEvents from '../UpcomingEvents/UpcomingEvents';
 const Home = () => {
     return (
         <div>
-            <Header/>
             <TopBanner/>
             <FeaturedBanner/>
             <OngoingProjects/>

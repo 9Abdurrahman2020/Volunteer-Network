@@ -6,15 +6,19 @@ import Contact from './Pages/Contact/Contact'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Header from './Pages/Shared/Header/Header';
+import Registration from './Pages/Registration/Registration';
 AOS.init();
 
 function App() {
   return (
     <BrowserRouter>
+    <Header/>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/login" element={<Login/>}/>
+        <Route path="/registration" element={<Registration/>}/>
       </Routes>
     </BrowserRouter>
   );
