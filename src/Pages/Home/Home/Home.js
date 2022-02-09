@@ -1,6 +1,7 @@
 import React from 'react';
 import Footer from '../../Shared/Footer/Footer';
 import Header from '../../Shared/Header/Header';
+import AppealsDonations from '../AppealsDonations/AppealsDonations';
 import BecomeAVolunteer from '../BecomeAVolunteer/BecomeAVolunteer';
 import FeaturedBanner from '../FeaturedBanner/FeaturedBanner';
 import OngoingProjects from '../OngoingProjects/OngoingProjects';
@@ -14,6 +15,7 @@ const Home = () => {
             <FeaturedBanner/>
             <OngoingProjects/>
             <BecomeAVolunteer/>
+            <AppealsDonations/>
             <Footer/>
         </div>
     );

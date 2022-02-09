@@ -1,28 +1,32 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+
+export const fetchUserDonationData = createAsyncThunk(
+  'data/fetchDonationData',
+  async () => {
+    const response = await fetch('./FakeData/FakeData.json')
+    .then( res=> res.json())
+    return response
+  }
+)
+
 
 export const volunteerSlice = createSlice({
   name: 'counter',
   initialState: {
-    value: 0,
+    donationData: []
   },
   reducers: {
-    increment: (state) => {
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the Immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
-      state.value += 1
-    },
-    decrement: (state) => {
-      state.value -= 1
-    },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload
-    },
+
   },
+  extraReducers: (builder)=>{
+    builder.addCase(fetchUserDonationData.fulfilled,(state, action)=>{
+      state.donationData = action.payload;
+
+    })
+  }
 })
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = volunteerSlice.actions
+export const { } = volunteerSlice.actions
 
 export default volunteerSlice.reducer
