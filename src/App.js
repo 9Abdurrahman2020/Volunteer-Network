@@ -8,19 +8,27 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Header from './Pages/Shared/Header/Header';
 import Registration from './Pages/Registration/Registration';
+import AuthProvider from './Context/AuthProvider';
 AOS.init();
 
 function App() {
   return (
-    <BrowserRouter>
-    <Header/>
-      <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/contact" element={<Contact/>}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/registration" element={<Registration/>}/>
-      </Routes>
-    </BrowserRouter>
+    <AuthProvider>
+          <BrowserRouter>
+
+          <Header/>
+
+            <Routes>
+
+              <Route path="/" element={<Home/>}/>
+              <Route path="/contact" element={<Contact/>}/>
+              <Route path="/login" element={<Login/>}/>
+              <Route path="/registration" element={<Registration/>}/>
+
+            </Routes>
+          
+        </BrowserRouter>
+    </AuthProvider>
   );
 }
 
