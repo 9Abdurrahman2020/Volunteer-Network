@@ -9,8 +9,7 @@ const useFirebase = () =>{
     const provider = new GoogleAuthProvider();
     const [ user, setUser ] = useState(null);
     const [ modal, setModal ] = useState(false);
-    const [ authError, setAuthError ] = useState('')
-
+    const [ authError, setAuthError ] = useState('');
 
     useEffect( ()=>{
         onAuthStateChanged(auth, user =>{

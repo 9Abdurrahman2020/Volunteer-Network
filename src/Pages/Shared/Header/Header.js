@@ -1,10 +1,14 @@
 import React from 'react';
-import { Container, Nav, Navbar, Offcanvas } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar, Offcanvas } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../../Hooks/useAuth';
 import './header.css'
 
 
 const Header = () => {
+    
+    const { user, logOut } = useAuth();
+
     return (
         <div>
             <Navbar bg="light" expand="lg">
@@ -16,7 +20,9 @@ const Header = () => {
 
                         <NavLink to="/"><h5>Home</h5></NavLink>
                         <NavLink to="/contact"><h5>Contact</h5></NavLink>
-                        <NavLink to="/login"><h5>Login</h5></NavLink>
+                        {
+                                user ? <h5 className="user-name"><i class="fas fa-user"></i> <Button onClick={ logOut } className="logout-button">Logout</Button> </h5>: <NavLink to="/login"><h5>Login</h5></NavLink>
+                        }
 
                     </Nav>
 
@@ -35,7 +41,9 @@ const Header = () => {
 
                             <NavLink to="/"><h5>Home</h5></NavLink>
                             <NavLink to="/contact"><h5>Contact</h5></NavLink>
-                            <NavLink to="/login"><h5>Login</h5></NavLink>
+                            {
+                                user ? <h5 className="user-name"><i class="fas fa-user"></i> <Button onClick={ logOut } className="logout-button">Logout</Button> </h5>: <NavLink to="/login"><h5>Login</h5></NavLink>
+                            }
 
                         </Nav>
                         
