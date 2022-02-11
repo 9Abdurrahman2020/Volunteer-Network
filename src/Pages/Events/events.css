@@ -1,0 +1,29 @@
+.events-banner{
+    background-color: rgb(131, 126, 126);
+    background-image: url('https://www.ucsfhealth.org/-/media/project/ucsf/ucsf-health/education/hero/running-a-marathon-race-day-success-2x.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    background-blend-mode: multiply;
+    flex-direction: column;
+}
+.event-page-event-container{
+    margin: 100px 0;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 20px;
+}
+@media only screen and ( max-width:991px){
+    .event-page-event-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media only screen and ( max-width:650px){
+    .event-page-event-container{
+        grid-template-columns: repeat(1,1fr);
+    }
+}

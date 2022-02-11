@@ -19,6 +19,8 @@ const Header = () => {
                     <Nav className="ms-auto my-2 my-lg-0 navbar-links">
 
                         <NavLink to="/"><h5>Home</h5></NavLink>
+                        <NavLink to="/causes"><h5>Causes</h5></NavLink>
+                        <NavLink to="/events"><h5>Events</h5></NavLink>
                         <NavLink to="/contact"><h5>Contact</h5></NavLink>
                         {
                                 user ? <h5 className="user-name"><i class="fas fa-user"></i> <Button onClick={ logOut } className="logout-button">Logout</Button> </h5>: <NavLink to="/login"><h5>Login</h5></NavLink>
@@ -40,6 +42,8 @@ const Header = () => {
                         <Nav className="justify-content-end flex-grow-1 pe-3 offLinks">
 
                             <NavLink to="/"><h5>Home</h5></NavLink>
+                            <NavLink to="/causes"><h5>Causes</h5></NavLink>
+                            <NavLink to="/events"><h5>Events</h5></NavLink>
                             <NavLink to="/contact"><h5>Contact</h5></NavLink>
                             {
                                 user ? <h5 className="user-name"><i class="fas fa-user"></i> <Button onClick={ logOut } className="logout-button">Logout</Button> </h5>: <NavLink to="/login"><h5>Login</h5></NavLink>

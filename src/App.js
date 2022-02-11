@@ -9,6 +9,8 @@ import 'aos/dist/aos.css';
 import Header from './Pages/Shared/Header/Header';
 import Registration from './Pages/Registration/Registration';
 import AuthProvider from './Context/AuthProvider';
+import Events from './Pages/Events/Events';
+import Causes from './Pages/Causes/Causes';
 AOS.init();
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
               <Route path="/" element={<Home/>}/>
               <Route path="/contact" element={<Contact/>}/>
               <Route path="/login" element={<Login/>}/>
+              <Route path="/events" element={<Events/>}/>
+              <Route path="/causes" element={<Causes/>}/>
               <Route path="/registration" element={<Registration/>}/>
 
             </Routes>
