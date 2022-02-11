@@ -1,15 +1,36 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Container } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchUserDonationData } from '../../features/counter/volunteerSlice';
+import SingleDonationCard from '../Home/SingleDonationCard/SingleDonationCard';
 import './causes.css'
 
 const Causes = () => {
+    const dispatch = useDispatch();
+    const donation = useSelector( state => state.volunteerData.donationData)
+
+    useEffect( ()=>{
+        dispatch(fetchUserDonationData())
+    },[])
+
     return (
-        <div className="">
-            <h1>This is cause</h1>
-            <div class="card-1">
-                <img src="http://www.pngmart.com/files/5/Pyramids-PNG-HD.png" alt=""/>
-                <h3>Pyramids</h3>
-                <p>The Egyptian pyramids are ancient pyramid-shaped masonry structures located in Egypt. As of November 2008, sources cite either 118 or 138 as the number of identified Egyptian pyramids.</p>
+        <div>
+            <div className="donation-campaign-banner">
+                <h1 data-aos="zoom-in" 
+                data-aos-duration="500" 
+                style={{fontWeight:'bold'}} className='display-4'
+                >Our Campaign</h1>
+                <hr
+                style={{backgroundColor:'#fc0f03'}}
+                data-aos="zoom-in" 
+                data-aos-duration="500" 
+                className='horizontal-line2' />
             </div>
+            <Container className="causes-container">
+            {
+                donation.map( pd => <SingleDonationCard key={pd.id} data={pd} /> )
+            }
+            </Container>
         </div>
     );
 };

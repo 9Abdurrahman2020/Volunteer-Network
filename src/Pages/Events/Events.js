@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import SingleEventCard from '../Home/SingleEventCard/SingleEventCard';
 import { fetchEventData } from '../../features/counter/volunteerSlice';
 import './events.css';
 import SingleEvent from './SingleEvent/SingleEvent';
@@ -21,12 +20,11 @@ const Events = () => {
             <div className="events-banner">
                 <h1 data-aos="zoom-out" 
                 data-aos-duration="500" 
-                data-aos-delay="500" style={{fontWeight:'bold'}} className='display-4'>Upcoming Events</h1>
+                style={{fontWeight:'bold'}} className='display-4'>Upcoming Events</h1>
                 <hr
                 style={{backgroundColor:'#fc0f03'}}
                 data-aos="zoom-out" 
                 data-aos-duration="500" 
-                data-aos-delay="500"
                 className='horizontal-line2' />
             </div>
             <Container>

@@ -5,8 +5,8 @@ import './singleDonationCard.css'
 const SingleDonationCard = (props) => {
     const {title,img,des} = props.data
     return (
-        <div className="my-5">
-            <div>
+        <div className="my-5 border donation-card-container">
+            <div className='donation-img-container'>
                 <img style={{width:'100%'}} src={img} alt="" />
             </div>
             <div className="featured-right2">
