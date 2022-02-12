@@ -1,0 +1,25 @@
+.donation-amount-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+.custom-donate-amount{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.donation-detail-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 20px;
+}
+
+@media only screen and ( max-width: 750px ){
+    .donation-amount-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .custom-donate-amount{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .donation-detail-container{
+        grid-template-columns: repeat(1,1fr);
+    }
+}

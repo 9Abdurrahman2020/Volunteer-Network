@@ -22,10 +22,21 @@ export const volunteerSlice = createSlice({
   name: 'counter',
   initialState: {
     donationData: [],
-    eventData: []
+    eventData: [],
+    exactDonateData: [],
+    paymentMethod:'online',
+    donationAmount: '$100'
   },
   reducers: {
-
+    setExactDonateData:(state,action)=>{
+      state.exactDonateData = action.payload;
+    },
+    setPaymentMethod:(state,action)=>{
+      state.paymentMethod = action.payload;
+    },
+    setDonationAmount:(state,action)=>{
+      state.donationAmount = action.payload;
+    }
   },
   extraReducers: (builder)=>{
     builder.addCase(fetchUserDonationData.fulfilled,(state, action)=>{
@@ -40,6 +51,6 @@ export const volunteerSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { } = volunteerSlice.actions
+export const { setExactDonateData, setPaymentMethod, setDonationAmount } = volunteerSlice.actions
 
-export default volunteerSlice.reducer
+export default volunteerSlice.reducer;
