@@ -2,8 +2,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    height: 80vh;
 }
 .payment-container{
     padding: 30px;
+}
+.payment-button-container{
+    display: flex;
+    justify-content: center;
 }

@@ -23,7 +23,7 @@ const Header = () => {
                         <NavLink to="/events"><h5>Events</h5></NavLink>
                         <NavLink to="/contact"><h5>Contact</h5></NavLink>
                         {
-                                user ? <h5 className="user-name"><i class="fas fa-user"></i> <Button onClick={ logOut } className="logout-button">Logout</Button> </h5>: <NavLink to="/login"><h5>Login</h5></NavLink>
+                                user ? <h5 className="user-name"><i class="fas fa-user"></i> <Button onClick={ logOut } variant="danger" className="logout-button">Logout</Button> </h5>: <NavLink to="/login"><h5>Login</h5></NavLink>
                         }
 
                     </Nav>
