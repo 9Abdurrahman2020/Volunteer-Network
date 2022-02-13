@@ -12,6 +12,7 @@ import AuthProvider from './Context/AuthProvider';
 import Events from './Pages/Events/Events';
 import Causes from './Pages/Causes/Causes';
 import Donate from './Pages/Donate/Donate';
+import SuccessPayment from './Pages/SuccessPayment/SuccessPayment';
 AOS.init();
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
               <Route path="/causes" element={<Causes/>}/>
               <Route path="/registration" element={<Registration/>}/>
               <Route path="/donate/:id" element={ <Donate/> }/>
+              <Route path="/success" element={ <SuccessPayment/> }/>
 
             </Routes>
           

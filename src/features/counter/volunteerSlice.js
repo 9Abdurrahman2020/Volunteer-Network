@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 export const fetchUserDonationData = createAsyncThunk(
   'data/fetchDonationData',
   async () => {
-    const response = await fetch('./FakeData/FakeData.json')
+    const response = await fetch('http://localhost:5000/causes')
     .then( res=> res.json())
     return response
   }
@@ -11,7 +11,7 @@ export const fetchUserDonationData = createAsyncThunk(
 export const fetchEventData = createAsyncThunk(
   'data/fetchEventData',
   async () => {
-    const response = await fetch('./FakeData/eventData.json')
+    const response = await fetch('http://localhost:5000/events')
     .then( res=> res.json())
     return response
   }
@@ -25,7 +25,8 @@ export const volunteerSlice = createSlice({
     eventData: [],
     exactDonateData: [],
     paymentMethod:'online',
-    donationAmount: '$100'
+    donationAmount: '$10',
+    paymentInfo:[]
   },
   reducers: {
     setExactDonateData:(state,action)=>{
@@ -36,6 +37,9 @@ export const volunteerSlice = createSlice({
     },
     setDonationAmount:(state,action)=>{
       state.donationAmount = action.payload;
+    },
+    setPaymentInfo:(state,action)=>{
+      state.paymentInfo = action.payload;
     }
   },
   extraReducers: (builder)=>{
@@ -51,6 +55,6 @@ export const volunteerSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { setExactDonateData, setPaymentMethod, setDonationAmount } = volunteerSlice.actions
+export const { setExactDonateData, setPaymentMethod, setDonationAmount, setPaymentInfo } = volunteerSlice.actions
 
 export default volunteerSlice.reducer;

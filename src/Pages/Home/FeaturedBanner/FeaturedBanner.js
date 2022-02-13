@@ -1,8 +1,13 @@
 import React from 'react';
 import { Button, Container, ProgressBar, Row } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { setExactDonateData } from '../../../features/counter/volunteerSlice';
 import './featuredBanner.css'
 
 const FeaturedBanner = () => {
+    const dispatch = useDispatch();
+
     return (
         <div className='featured-container'>
             <Container>
@@ -37,7 +42,14 @@ const FeaturedBanner = () => {
                     </Row>
                     <hr />
                     <p style={{fontWeight:'500'}}>The great journey to end poverty for good begins with a child. Due to natural disasters and man made disasters...</p>
-                    <Button variant="dark" className="mt-3" size="lg"><i class="fas fa-check-circle"></i> DONATE NOW</Button> 
+                    <Link to="/donate/04">
+                    <Button onClick={ ()=> dispatch(setExactDonateData({
+        title:"Contribute for the abled child cancer",
+        id:"04",
+        des:"Many children die of cancer since they are not able to",
+        img:"https://loveicon.smartdemowp.com/wp-content/uploads/2021/06/blog-details-1.jpg"
+    }) )} variant="dark" className="mt-3" size="lg"><i class="fas fa-check-circle"></i> DONATE NOW</Button>
+                    </Link> 
                 </div>
             </Row>
         </Container>

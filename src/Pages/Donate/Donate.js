@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Container, ProgressBar, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { setDonationAmount, setPaymentMethod } from '../../features/counter/volunteerSlice';
-import './Donate.css'
+import { setDonationAmount, setPaymentInfo } from '../../features/counter/volunteerSlice';
+import './Donate.css';
 
 const Donate = () => {
     const data = useSelector( state => state.volunteerData.exactDonateData);
     const donationAmount = useSelector( state => state.volunteerData.donationAmount);
-    const paymentMethod = useSelector( state => state.volunteerData.paymentMethod);
 
     const dispatch = useDispatch();
-    const [ donatorData, setDonatorData ] = useState({})
+    const [ donatorData, setDonatorData ] = useState({});
+
+    useEffect( ()=>{ 
+        dispatch(setDonationAmount('$10'))
+    },[])
 
     const handleOnChange = (e)=>{
         const value = '$'+ e.target.value;
@@ -25,12 +28,21 @@ const Donate = () => {
     }
     const handleOnSubmit = (e) =>{
         e.preventDefault()
-        console.log(donatorData);
+        const donationData = {...donatorData,amount: donationAmount.slice(1)}
+        fetch('http://localhost:5000/init',{
+            method:"POST",
+            headers:{
+                "content-type":"application/json"
+            },
+            body: JSON.stringify(donationData)
+        })
+        .then( res=> res.json())
+        .then(data=>{
+            window.location.replace(data.GatewayPageURL)
+            
+        })
     }
 
-    useEffect( ()=>{
-        dispatch(setPaymentMethod('online'))
-    },[])
 
     return (
         <Container className='my-5'>
@@ -58,10 +70,10 @@ const Donate = () => {
                 </Row>
                 <h2 className='mt-4'>Donation Amount: {donationAmount}</h2>
                 <div className="donation-amount-container">
-                    <Button onClick={ ()=> dispatch(setDonationAmount('$100')) } variant="outline-secondary" className="me-3 my-2">$100</Button>
-                    <Button onClick={ ()=> dispatch(setDonationAmount('$200')) } variant="outline-secondary" className="me-3 my-2">$200</Button>
-                    <Button onClick={ ()=> dispatch(setDonationAmount('$300')) } variant="outline-secondary" className="me-3 my-2">$300</Button>
-                    <Button onClick={ ()=> dispatch(setDonationAmount('$400')) } variant="outline-secondary" className="me-3 my-2">$400</Button>
+                    <Button onClick={ ()=> dispatch(setDonationAmount('$10')) } variant="outline-secondary" className="me-3 my-2">$10</Button>
+                    <Button onClick={ ()=> dispatch(setDonationAmount('$20')) } variant="outline-secondary" className="me-3 my-2">$20</Button>
+                    <Button onClick={ ()=> dispatch(setDonationAmount('$30')) } variant="outline-secondary" className="me-3 my-2">$30</Button>
+                    <Button onClick={ ()=> dispatch(setDonationAmount('$40')) } variant="outline-secondary" className="me-3 my-2">$40</Button>
                 </div>
                 <div class="input-group my-2">
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-dollar-sign"></i></span>
@@ -92,21 +104,7 @@ const Donate = () => {
                         label="message" 
                         />
                     </div>
-                    <h4>Payment method:</h4>
-                    <div onClick={ ()=> dispatch(setPaymentMethod('online'))} class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked/>
-                        <label class="form-check-label" for="inlineRadio1">Online</label>
-                        </div>
-                        <div  onClick={ ()=> dispatch(setPaymentMethod('offline'))} class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"/>
-                        <label class="form-check-label" for="inlineRadio2">Offline</label>
-                    </div>
-                    <br />
-                    {
-                        paymentMethod === 'online' && <input type="text" placeholder='Enter credit card number'/>
-                    }
-                    <br />
-                    <input className='btn btn-danger my-3' type="submit" value="DONATE" />
+                    <Button variant="danger" type="submit">DONATE {`${donationAmount}`}</Button>
                 </form>
 
 
