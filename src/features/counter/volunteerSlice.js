@@ -24,6 +24,7 @@ export const volunteerSlice = createSlice({
     donationData: [],
     eventData: [],
     exactDonateData: [],
+    exactEventData: [],
     paymentMethod:'online',
     donationAmount: '$10',
     paymentInfo:[]
@@ -31,6 +32,9 @@ export const volunteerSlice = createSlice({
   reducers: {
     setExactDonateData:(state,action)=>{
       state.exactDonateData = action.payload;
+    },
+    setExactEventData:(state,action)=>{
+      state.exactEventData = action.payload;
     },
     setPaymentMethod:(state,action)=>{
       state.paymentMethod = action.payload;
@@ -55,6 +59,6 @@ export const volunteerSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { setExactDonateData, setPaymentMethod, setDonationAmount, setPaymentInfo } = volunteerSlice.actions
+export const { setExactDonateData, setPaymentMethod, setDonationAmount, setPaymentInfo, setExactEventData } = volunteerSlice.actions
 
 export default volunteerSlice.reducer;

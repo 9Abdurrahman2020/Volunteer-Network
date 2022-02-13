@@ -1,9 +1,14 @@
 import React from 'react';
 import './singleEventCard.css';
 import { Button, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setExactEventData } from '../../../features/counter/volunteerSlice';
 
 const SingleEventCard = (props) => {
-    const { title, day, month, spot, time, des } = props.data;
+    const dispatch = useDispatch()
+    const { title, day, month, spot, time, id } = props.data;
+    const url = `/join-event/${id}`
     return (
         <div className='single-event-container'>
             <Row className="date">
@@ -23,7 +28,7 @@ const SingleEventCard = (props) => {
             
             <Row style={{alignItems:'center'}}>
                 <div className="col-md-5">
-                    <Button variant='danger' className='my-3'>JOIN EVENT</Button>
+                    <Link to={url}><Button  onClick={ ()=> dispatch(setExactEventData(props.data)) } variant='danger' className='my-3'>JOIN EVENT</Button></Link>
                 </div>
                 <div className="col-md-7">
                     <i class="fas fa-clock text-danger"></i> {time} -{spot}
