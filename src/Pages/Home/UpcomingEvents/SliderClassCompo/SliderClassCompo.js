@@ -37,7 +37,7 @@ export default class SliderClassCompo  extends Component  {
                     
                     <Slider ref={c => (this.slider = c)} {...settings}>
                         {
-                            this.props.event.map( p => <SingleEventCard data={p}/>)
+                            this.props.event.map( p => <SingleEventCard key={p.id} data={p}/>)
                         }
                     </Slider>
             </div>

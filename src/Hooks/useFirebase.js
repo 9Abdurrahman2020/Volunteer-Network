@@ -80,7 +80,7 @@ const useFirebase = () =>{
     }
 
     const postVolunteerData = (data) =>{
-        fetch('http://localhost:5000/volunteer',{
+        fetch('https://obscure-temple-53299.herokuapp.com/volunteer',{
             method:'POST',
             headers:{
                 "content-type":"application/json"
@@ -96,7 +96,7 @@ const useFirebase = () =>{
         })
     }
     const getSingleVolunteer =(email)=>{
-        fetch(`http://localhost:5000/volunteer/${email}`)
+        fetch(`https://obscure-temple-53299.herokuapp.com/volunteer/${email}`)
         .then(res=> res.json())
         .then( response => {
             if(response?.volunteer){

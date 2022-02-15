@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 export const fetchUserDonationData = createAsyncThunk(
   'data/fetchDonationData',
   async () => {
-    const response = await fetch('http://localhost:5000/causes')
+    const response = await fetch('https://obscure-temple-53299.herokuapp.com/causes')
     .then( res=> res.json())
     return response
   }
@@ -11,7 +11,7 @@ export const fetchUserDonationData = createAsyncThunk(
 export const fetchEventData = createAsyncThunk(
   'data/fetchEventData',
   async () => {
-    const response = await fetch('http://localhost:5000/events')
+    const response = await fetch('https://obscure-temple-53299.herokuapp.com/events')
     .then( res=> res.json())
     return response
   }

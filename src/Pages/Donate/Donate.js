@@ -36,7 +36,7 @@ const Donate = () => {
     const handleOnSubmit = (e) =>{
         e.preventDefault()
         const donationData = {...donatorData,amount: donationAmount.slice(1)}
-        fetch('http://localhost:5000/init',{
+        fetch('https://obscure-temple-53299.herokuapp.com/init',{
             method:"POST",
             headers:{
                 "content-type":"application/json"
