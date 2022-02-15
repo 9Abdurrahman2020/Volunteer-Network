@@ -1,24 +1,35 @@
-import React from 'react';
-import { Button, Card, Container, Row } from 'react-bootstrap';
+import React, { useEffect } from 'react';
+import { Button, Card, Container } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { fetchEventData } from '../../features/counter/volunteerSlice';
 import './joinEvent.css'
 
 const JoinEvent = () => {
-    const event = useSelector( state=> state.volunteerData.exactEventData)
+    const { id } = useParams();
+    const dispatch = useDispatch();
+
+    useEffect( ()=>{
+        dispatch(fetchEventData())
+    },[])
+
+    const event = useSelector( state=> state.volunteerData.eventData);
+    const exactEvent = event.find( p => p.id === id );
     return (
         <Container>
             <Card>
-            <div style={{backgroundImage:`url(${event.img})`}} className="donation-campaign-banner px-5">
+            <div style={{backgroundImage:`url(${exactEvent?.img})`}} className="donation-campaign-banner px-5">
                 <h1 data-aos="zoom-in" 
                 data-aos-duration="500" 
                 style={{fontWeight:'bold'}} className='display-4 text-center'
-                >{event.title}</h1>
+                >{exactEvent?.title}</h1>
                 <hr
                 style={{backgroundColor:'#fc0f03'}}
                 data-aos="zoom-in" 
                 data-aos-duration="500" 
                 className='horizontal-line2' />
-                <p className='event-des'>{event.des}</p>
+                <p className='event-des'>{exactEvent?.des}</p>
             </div>
                 <Card.Body className='p-4'>
                     
@@ -29,8 +40,8 @@ const JoinEvent = () => {
                             </div>
                             <div className='ms-3'>
                                 <h4>Event Date</h4>
-                                <p className='my-0'>{event.day} {event.month} 2022</p>
-                                <p className='my-0'>{event.time}</p>
+                                <p className='my-0'>{exactEvent?.day} {exactEvent?.month} 2022</p>
+                                <p className='my-0'>{exactEvent?.time}</p>
                             </div>
                         </div>
                         <div className="event-location">
@@ -39,7 +50,7 @@ const JoinEvent = () => {
                             </div>
                             <div className='ms-3'>
                                 <h4>Event Location</h4>
-                                <p className='my-0'>{event.spot}</p>
+                                <p className='my-0'>{exactEvent?.spot}</p>
                             </div>
                         </div>
                     </div>

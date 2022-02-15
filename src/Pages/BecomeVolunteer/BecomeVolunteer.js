@@ -51,7 +51,7 @@ const BecomeVolunteer = () => {
                     </Modal.Footer>
                 </Modal>
                 {
-                    isVolunteer ? <h1>You already our volunteer</h1> : <>
+                    !isVolunteer ? <>
                     <div className="col-lg-6 image-container">
                         <img width='100%' src="https://www.volunteeringnz.org.nz/wp-content/uploads/Group-of-Volunteers.jpg" alt="" />
                     </div>
@@ -88,7 +88,7 @@ const BecomeVolunteer = () => {
                             <input className='btn btn-success login-button' type="submit" value="Register as Volunteer" />
                         </form>
                     </div>
-                    </>
+                    </> : <h1 className="text-success text-center">You already our volunteer !</h1>
                 }
                 
             </Row>

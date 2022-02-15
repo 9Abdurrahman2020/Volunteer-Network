@@ -12,6 +12,8 @@ const useFirebase = () =>{
     const [ authError, setAuthError ] = useState('');
     const [ isLoading, setIsLoading ] = useState(true);
     const [ isVolunteer, setIsVolunteer ] = useState(false)
+    const [ volunteerLoading, setVolunteerLoading ] = useState(true)
+
 
     useEffect( ()=>{
         onAuthStateChanged(auth, user =>{
@@ -97,10 +99,11 @@ const useFirebase = () =>{
         fetch(`http://localhost:5000/volunteer/${email}`)
         .then(res=> res.json())
         .then( response => {
-            if(response.volunteer){
+            if(response?.volunteer){
                 setIsVolunteer(true)
-                setIsLoading(false)
+                setVolunteerLoading(false)
             }
+            // setVolunteerLoading(false)
         })
     }
 
@@ -117,7 +120,8 @@ const useFirebase = () =>{
         isLoading,
         postVolunteerData,
         getSingleVolunteer,
-        isVolunteer
+        isVolunteer,
+        volunteerLoading
     }
 }
 export default useFirebase;

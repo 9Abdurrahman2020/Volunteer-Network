@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './becomeAVolunteer.css'
 
 const BecomeAVolunteer = () => {
@@ -25,7 +26,7 @@ const BecomeAVolunteer = () => {
                 </Row>
                 <div className="col-md-6">
                     <div style={{textAlign:'center'}}>
-                        <Button variant="danger" className="mt-3" size="lg"><i class="fas fa-check-circle"></i> BECOME A VOLUNTEER</Button>
+                        <Link to="/become-volunteer"><Button variant="danger" className="mt-3" size="lg"><i class="fas fa-check-circle"></i> BECOME A VOLUNTEER</Button></Link>
                     </div> 
                 </div>
             </Row>

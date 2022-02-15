@@ -16,6 +16,7 @@ import SuccessPayment from './Pages/SuccessPayment/SuccessPayment';
 import JoinEvent from './Pages/JoinEvent/JoinEvent';
 import BecomeVolunteer from './Pages/BecomeVolunteer/BecomeVolunteer';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
+import VolunteerRoute from './Pages/VolunteerRoute/VolunteerRoute';
 AOS.init();
 
 function App() {
@@ -35,7 +36,7 @@ function App() {
               <Route path="/registration" element={<Registration/>}/>
               <Route path="/donate/:id" element={ <Donate/> }/>
               <Route path="/success" element={ <SuccessPayment/> }/>
-              <Route path="/join-event/:id" element={ <JoinEvent/> }/>
+              <Route path="/join-event/:id" element={ <VolunteerRoute> <JoinEvent/> </VolunteerRoute>  }/>
               <Route path="/become-volunteer" element={ <PrivateRoute> <BecomeVolunteer/> </PrivateRoute>  }/>
 
             </Routes>

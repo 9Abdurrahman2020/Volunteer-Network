@@ -1,19 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Container, ProgressBar, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { setDonationAmount, setPaymentInfo } from '../../features/counter/volunteerSlice';
+import { useParams } from 'react-router-dom';
+import { fetchUserDonationData, setDonationAmount } from '../../features/counter/volunteerSlice';
 import './Donate.css';
 
 const Donate = () => {
-    const data = useSelector( state => state.volunteerData.exactDonateData);
+    const data = useSelector( state => state.volunteerData.donationData);
     const donationAmount = useSelector( state => state.volunteerData.donationAmount);
 
     const dispatch = useDispatch();
     const [ donatorData, setDonatorData ] = useState({});
+    const { id } = useParams();
 
     useEffect( ()=>{ 
         dispatch(setDonationAmount('$10'))
+        dispatch(fetchUserDonationData())
     },[])
+
+    const exactData = data.filter( d => d.id === id)
+    console.log(exactData);
+
 
     const handleOnChange = (e)=>{
         const value = '$'+ e.target.value;
@@ -46,11 +53,11 @@ const Donate = () => {
 
     return (
         <Container className='my-5'>
-            <div style={{backgroundImage:`url(${data.img})`}} className="donation-campaign-banner">
+            <div style={{backgroundImage:`url(${exactData[0]?.img})`}} className="donation-campaign-banner">
                 <h1 data-aos="zoom-in" 
                 data-aos-duration="500" 
                 style={{fontWeight:'bold'}} className='display-4 text-center'
-                >{data.title}</h1>
+                >{exactData[0]?.title}</h1>
                 <hr
                 style={{backgroundColor:'#fc0f03'}}
                 data-aos="zoom-in" 
