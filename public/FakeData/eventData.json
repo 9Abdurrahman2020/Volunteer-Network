@@ -4,53 +4,59 @@
         "day":"30",
         "month":"November",
         "title":"Healthy Food For Growing",
-        "des":"Children and teenagers require the proper nutrition to grow, learn, and develop. This implies that your children require foods and...",
+        "des":"Children and teenagers require the proper nutrition to grow, learn, and develop. This implies that your children require foods and beverages that are high in nutrients but low in calories, fats, and sweets, laying a solid basis for a healthy life.",
         "spot":"Sopot chottor, Chandpur.",
-        "time":"10:00am"
+        "time":"10:00am",
+        "img":"https://loveicon.smartdemowp.com/wp-content/uploads/2021/06/blog-v2-1.jpg"
     },
     {
         "id":"2",
         "day":"25",
         "month":"August",
         "title":"Education For Poor Children",
-        "des":"To make sure education for poor children we are raising our funds. At present we are seeing millions of children...",
+        "des":"To make sure education for poor children we are raising our funds. At present we are seeing millions of children being neglected around the world. They do not get proper education, food, treatment and many other advantages due to poverty. We are raising our fund to help.",
         "spot":"Uttara sector-11, Dhaka.",
-        "time":"11:00am"
+        "time":"11:00am",
+        "img":"https://loveicon.smartdemowp.com/wp-content/uploads/2021/06/Mask-Group-1.png"
     },
     {
         "id":"3",
         "day":"29",
         "month":"April",
         "title":"Promoting The Right of Poor Children",
-        "des":"We have launched this project to ensure the rights of poor children. Around the world many children are neglected due...",
+        "des":"We have launched this project to ensure the rights of poor children. Around the world many children are neglected due to their poverty. They can eat food properly, and can not go to school. So parents  send those children to work for a small amount of money.",
         "spot":"Uttara sector-10, Dhaka.",
-        "time":"12:00am"
+        "time":"12:00am",
+        "img":"https://loveicon.smartdemowp.com/wp-content/uploads/2021/06/Mask-Group-1.png"
     },
     {
         "id":"4",
         "day":"30",
         "month":"April",
         "title":"The Human rights and democracy programme",
-        "des":"The FCO’s Human Rights and Democracy Programme (HRDP) is an annual fund committed to promoting human rights and democracy efforts...",
+        "des":"The FCO’s Human Rights and Democracy Programme (HRDP) is an annual fund committed to promoting human rights and democracy efforts around the world. It aims to strengthen governments’ and civil society’s capacity to promote and protect human rights through focused programs.",
         "spot":"Mirpur-12, Dhaka.",
-        "time":"09:00am"
+        "time":"09:00am",
+        "img":"https://loveicon.smartdemowp.com/wp-content/uploads/2021/06/event-details-1.jpg"
     },
     {
         "id":"5",
         "day":"19",
         "month":"March",
         "title":"Cancer support world's biggest coffee",
-        "des":"Whatever motivates you to host, your participation has the potential to raise critical funding for cancer patients. The official date...",
+        "des":"Whatever motivates you to host, your participation has the potential to raise critical funding for cancer patients. The official date is September 24, although you are free to celebrate whenever you like.",
         "spot":"Mirpur-11, Dhaka.",
-        "time":"10:00am"
+        "time":"10:00am",
+        "img":"https://loveicon.smartdemowp.com/wp-content/uploads/2021/06/blog-details-1.jpg"
     },
     {
         "id":"6",
         "day":"17",
         "month":"November",
         "title":"A wooden fishing boat rests on deal in kent",
-        "des":"We have launched this project to ensure the rights of poor children. Around the world many children are neglected due...",
+        "des":"We have launched this project to ensure the rights of poor children. Around the world many children are neglected due to their poverty. They can eat food properly, and can not go to school. So parents  send those children to work for a small amount of money.",
         "spot":"Uttara sector-7, Dhaka.",
-        "time":"11:00am"
+        "time":"11:00am",
+        "img":"https://loveicon.smartdemowp.com/wp-content/uploads/2021/06/blog-v2-2.jpg"
     }
 ]

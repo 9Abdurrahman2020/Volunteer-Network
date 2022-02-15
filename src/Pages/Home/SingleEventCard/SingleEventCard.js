@@ -28,7 +28,7 @@ const SingleEventCard = (props) => {
             
             <Row style={{alignItems:'center'}}>
                 <div className="col-md-5">
-                    <Link to={url}><Button  onClick={ ()=> dispatch(setExactEventData(props.data)) } variant='danger' className='my-3'>JOIN EVENT</Button></Link>
+                    <Link to={url}><Button  onClick={ ()=> dispatch(setExactEventData(props.data)) } variant='danger' className='my-3'>Details</Button></Link>
                 </div>
                 <div className="col-md-7">
                     <i class="fas fa-clock text-danger"></i> {time} -{spot}
