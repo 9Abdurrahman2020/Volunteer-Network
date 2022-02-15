@@ -1,5 +1,5 @@
 import React, {  useEffect, useState } from 'react';
-import { Alert, Button, Modal, Row } from 'react-bootstrap';
+import { Button, Modal, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import './login.css';
@@ -8,7 +8,6 @@ const Login = () => {
 
     const [ inputData, setInputData ] = useState({});
     const { googleSignIn, user, modal, setModal, loginUser, authError, setAuthError } = useAuth();
-    console.log(user);
 
     useEffect( ()=>{
         setAuthError('')
