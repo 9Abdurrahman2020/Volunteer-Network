@@ -1,35 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Yellowtail&display=swap');
 
-
 .brand-logo{
     text-decoration: none;
     font-family: 'Dancing Script', cursive;
     font-family: 'Yellowtail', cursive;
-    color: rgb(255, 84, 5);
+    color: rgb(255, 255, 255);
 }
 .user-name{
     margin: 0 10px;
     text-decoration: none;
     color: #000;
 }
-
+.navbar-toggler{
+    background-color: white;
+}
 .navbar-links a{
     margin: 0 10px;
     text-decoration: none;
-    color: #000;
+    color: rgb(255, 255, 255);
 }
 .offLinks a{
     margin: 0 10px;
     text-decoration: none;
-    color: #000;
+    color: white;
 }
 .navbar-links a:hover{
-    color: rgb(255, 84, 5);
+    color: rgb(255, 94, 0);
     border-bottom: 1px solid rgb(255, 84, 5);
 }
 .offLinks a:hover{
     color: rgb(255, 84, 5);
     border-bottom: 1px solid rgb(255, 84, 5);
+}
+.mobile-header-container{
+    background-image: linear-gradient(to right,#c800ff, #175fd1  );
+    
 }
 @media only screen and (max-width: 991px) {
     .navbar-links{

@@ -11,7 +11,7 @@ const Header = () => {
 
     return (
         <div>
-            <Navbar bg="light" expand="lg">
+            <Navbar bg="dark" expand="lg">
                 <Container>
 
                     <NavLink className="brand-logo" to="/"><h3><img style={{width:'60px'}} src="https://i.ibb.co/2MnNjML/logo-removebg-preview.png" alt="" /> Volunteer Network</h3></NavLink>
@@ -38,7 +38,7 @@ const Header = () => {
                     placement="end"
                     >
 
-                    <Offcanvas.Body>
+                    <Offcanvas.Body className="mobile-header-container">
                     <NavLink className="brand-logo" to="/"><h3><img style={{width:'60px'}} src="https://i.ibb.co/2MnNjML/logo-removebg-preview.png" alt="" /> Volunteer Network</h3></NavLink>
                         <Nav className="justify-content-end flex-grow-1 pe-3 offLinks">
 
@@ -46,6 +46,7 @@ const Header = () => {
                             <NavLink to="/causes"><h5>Causes</h5></NavLink>
                             <NavLink to="/events"><h5>Events</h5></NavLink>
                             <NavLink to="/contact"><h5>Contact</h5></NavLink>
+                            <NavLink to="/become-volunteer"><h5>Become-Volunteer</h5></NavLink>
                             {
                                 user ? <h5 className="user-name"><i class="fas fa-user"></i> <Button onClick={ logOut } className="logout-button">Logout</Button> </h5>: <NavLink to="/login"><h5>Login</h5></NavLink>
                             }

@@ -10,7 +10,7 @@ import UpcomingEvents from '../UpcomingEvents/UpcomingEvents';
 
 const Home = () => {
     return (
-        <div>
+        <div style={{overflow:'hidden'}}>
             <TopBanner/>
             <FeaturedBanner/>
             <OngoingProjects/>
