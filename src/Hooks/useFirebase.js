@@ -103,7 +103,9 @@ const useFirebase = () =>{
                 setIsVolunteer(true)
                 setVolunteerLoading(false)
             }
-            // setVolunteerLoading(false)
+            else{
+                setVolunteerLoading(false)
+            }
         })
     }
 

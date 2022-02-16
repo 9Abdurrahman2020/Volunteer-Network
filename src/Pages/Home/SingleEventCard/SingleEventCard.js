@@ -12,12 +12,12 @@ const SingleEventCard = (props) => {
     return (
         <div className='single-event-container'>
             <Row className="date">
-                <div className="col-2">
+                <div className="col-3">
                     <div className="day-container">
                         <h2>{day}</h2>
                     </div>
                 </div>
-                <div className="col-10">
+                <div className="col-9">
                     <h3>{month}</h3>
                 </div>
             </Row>

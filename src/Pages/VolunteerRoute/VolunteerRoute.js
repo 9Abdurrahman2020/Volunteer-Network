@@ -8,18 +8,25 @@ const VolunteerRoute = ({children}) => {
     useEffect( ()=>{
         getSingleVolunteer(user?.email)
     },[user?.email])
+    const loadingStyle={
+        display:'flex',
+        justifyContent:'center',
+        alignItems:'center'
+    }
 
     if(volunteerLoading){
-        return <Button variant="primary" disabled>
-                 <Spinner
-                 as="span"
-                 animation="grow"
-                 size="sm"
-                 role="status"
-                 aria-hidden="true"
-                 />
-                 Loading...
-             </Button>
+        return <div style={loadingStyle} className="loading-container">
+                    <Button variant="primary" disabled>
+                        <Spinner
+                        as="span"
+                        animation="grow"
+                        size="sm"
+                        role="status"
+                        aria-hidden="true"
+                        />
+                        Loading...
+                    </Button>
+                </div>
      }
     return isVolunteer ? children : <Navigate to="/become-volunteer"/>
 };
